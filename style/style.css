@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'TT Lakes Regular';
+    src: url('../fonts/TTLakes-Regular.eot');
+    src: url('./fonts/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/TTLakes-Regular.woff') format('woff'),
+    url('../fonts/TTLakes-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+.service{
+    font-family: 'TT Lakes Regular';
+    }
+
+.wraper{
+    min-width: 320px;
+    max-width: 1120px;
+    max-height: 400px;
+    margin-left: 24px;
+}
+
+
+.service__title{
+    margin-top: 16px;
+    font-family: 'TT Lakes Regular';
+    font-size: 16px;
+    color: #7E7E82;
+    text-transform: uppercase;
+
+}
+
+.service__slider{
+    overflow: hidden;
+}
+
+.service__items{
+    position: relative;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 2816px;
+    gap: 16px;
+    margin-bottom: 16px;
+    transition: left 0.5s linear;
+}
+
+.service__item{
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+    width: 240px;
+    height: 72px;
+}
+
+.service__button{
+    display: none;
+}
+.service__pagination{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.pagination{
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(221, 221, 221, 1);
+    border-radius: 50%;
+    border: none;
+}
+
+.active{
+    background-color: #B5B6BC;
+}
+
+@media screen and (min-width: 768px){
+    
+.service__slider{
+    overflow: visible;
+}
+
+.hide__brands{
+    height: 170px;
+    overflow: hidden;
+}
+.show__brands{
+    height: 340px;
+}
+.wraper{
+    width: calc(100%-64px);
+}
+.service__items{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    row-gap: 16px;
+    column-gap: 16px;
+    transition: 0.5s linear;
+}
+.service__button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 24px;
+    gap: 15px;
+    padding: 5px;
+}
+.service__button--arrow{
+    color: #41F6D7;
+    font-size: 24px;
+    transform: rotate(90deg);
+}
+.service__button--info{
+    font-family: inherit;
+    font-size: 16px;
+}
+.service__pagination{
+    display: none;
+}
+.hide__arrow{
+    transform: rotate(270deg);
+}
+}
+
+@media screen and (min-width: 1120px){
+    .service__items{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .hide__brands{
+        height: 170px;
+    }
+    .show__brands{
+        height: 248px;
+    }
+}
