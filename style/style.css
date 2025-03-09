@@ -1,40 +1,47 @@
 @font-face {
-    font-family: 'TT Lakes Regular';
-    src: url('../fonts/TTLakes-Regular.eot');
-    src: url('./fonts/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/TTLakes-Regular.woff') format('woff'),
-    url('../fonts/TTLakes-Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'TT Lakes';
+    src: url("../fonts/TTLakes-Regular.woff") format('woff');
+    font-weight: 400;
     font-style: normal;
-}
+    font-display: swap;
+  }
 
 *,*::after,*::before{
     box-sizing: border-box;
 }
 
 .service{
-    font-family: 'TT Lakes Regular';
+    font-family: 'TT Lakes';
+    background-color: #f8f8f8;
+    width: 100%;
     }
 
 .wraper{
     min-width: 320px;
     max-width: 1120px;
     max-height: 400px;
-    margin-left: 24px;
-}
+    margin: 0 auto;
+    }
 
 
 .service__title{
-    margin-top: 16px;
-    font-family: 'TT Lakes Regular';
+    margin: 0;
+    padding: 16px;
     font-size: 16px;
     color: #7E7E82;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    background-image: linear-gradient(90deg, #f8f8f8 0, #fff);;
     text-transform: uppercase;
-
+    border-top: 1px solid #d9fff5;
 }
 
 .service__slider{
-    overflow: hidden;
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    height: auto;
 }
 
 .service__items{
@@ -43,10 +50,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 2816px;
-    gap: 16px;
-    margin-bottom: 16px;
-    transition: left 0.5s linear;
+    margin-bottom: 8px;
+    transition-duration: left 0.5s linear;
 }
 
 .service__item{
@@ -58,36 +63,58 @@
     border-radius: 6px;
     width: 240px;
     height: 72px;
+    background-color: #ffffff;
 }
 
-.service__button{
+.swiper::after {
+    content: "";
+    background: linear-gradient(
+      270deg,
+      #f8f8f8 16.84%,
+      rgba(248, 248, 248, 0.0001) 100%
+    );
+    width: 24px;
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+  }
+
+.service__button--show{
     display: none;
 }
-.service__pagination{
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
 
-.pagination{
-    display: block;
+.service__item:hover{
+    opacity: 0.5;
+   }
+
+.swiper-pagination {
+    position: relative;
+    }
+  
+.swiper-pagination-bullet {
     width: 12px;
     height: 12px;
-    background-color: rgba(221, 221, 221, 1);
-    border-radius: 50%;
-    border: none;
-}
-
-.active{
+    background-color: #DDDDDD;
+  }
+  
+.swiper-pagination-bullet-active {
     background-color: #B5B6BC;
-}
+  }
 
 @media screen and (min-width: 768px){
-    
+.service__title{
+    margin-left: 24px;
+}    
+.service-pagination{
+    display: none;
+}
 .service__slider{
     overflow: visible;
+    padding-left: 24px;
+    padding-bottom: 0;
 }
-
 .hide__brands{
     height: 170px;
     overflow: hidden;
@@ -95,46 +122,47 @@
 .show__brands{
     height: 340px;
 }
-.wraper{
-    width: calc(100%-64px);
-}
+
 .service__items{
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
     row-gap: 16px;
-    column-gap: 16px;
     transition: 0.5s linear;
 }
-.service__button{
+
+.service__item{
+    width: 224px;
+}
+
+.service__button--show{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 24px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-left: 24px;
     gap: 15px;
     padding: 5px;
 }
-.service__button--arrow{
+.service__button--show::before{
+    content: '«';
     color: #41F6D7;
     font-size: 24px;
+    transform: rotate(-90deg);
+}
+.button-all--hidden::before{
     transform: rotate(90deg);
-}
-.service__button--info{
-    font-family: inherit;
-    font-size: 16px;
-}
-.service__pagination{
-    display: none;
-}
-.hide__arrow{
-    transform: rotate(270deg);
 }
 }
 
 @media screen and (min-width: 1120px){
     .service__items{
         grid-template-columns: repeat(4, 1fr);
+    }
+    .service__item{
+        width: 240px;
     }
     .hide__brands{
         height: 170px;
