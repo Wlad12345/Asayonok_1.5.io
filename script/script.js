@@ -1,29 +1,30 @@
-const sliderItems=document.querySelector('.service__items');
-const sliderItem=document.querySelectorAll('.service__item');
-const showAllBtn = document.querySelector('.service__button');
-const paginationBox = document.querySelector('.service__pagination');
-paginationBox.innerHTML =`<button class='pagination'></button>`.repeat(sliderItem.length);
-paginationBox.firstChild.classList.add('active');
+const swiper = new Swiper('.service__slider', {
+  wrapperClass: 'service__items',
+  SlideClass: 'service__item',
+  slidesPerView: 'auto',
+  spaceBetween: 16,
+  loop: true,
+  breakpoints: {
+    768: {
+      enabled: false
+    }
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: 'bullets',
+    clickable: true
+  },
+});
 
-let paginationArray = [...paginationBox.children];
-for (let i = 0; i < paginationArray.length; i++) {
-    paginationArray[i].addEventListener('click', () => {
-        for (let j = 0; j < paginationArray.length; j++) {
-            paginationArray[j].classList.remove('active');
-        }
-        paginationArray[i].classList.add('active');
-        sliderItems.style.left = -sliderItems.offsetWidth / sliderItem.length * i + 'px';
-    });
-}
+var showAllButton = document.querySelector(".service__button--show");
+var brandsList = document.querySelector('.service__items');
 
-const arrow = document.querySelector('.show__arrow');
-const btnText = document.querySelector('.service__button--info');
-
-showAllBtn.addEventListener('click', () => {
-    sliderItems.classList.toggle('show__brands');
-    arrow.classList.toggle('hide__arrow');
-    arrow.classList.contains('hide__arrow') ? 
-        btnText.textContent = 'Скрыть':
-        btnText.textContent = 'Показать все';
-    
+showAllButton.addEventListener('click', function () {
+  showAllButton.classList.toggle('button-all--hidden');
+  brandsList.classList.toggle('show__brands');
+  if (showAllButton.classList.contains("button-all--hidden")) {
+    showAllButton.textContent = 'Скрыть';
+  } else {
+    showAllButton.textContent = 'Показать все';
+  }
 });
