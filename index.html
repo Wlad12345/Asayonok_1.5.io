@@ -3,88 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11.2.5/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./style/normalize.css">
     <link rel="stylesheet" href="./style/style.css">
     <title>Document</title>
 </head>
 <body>
     <section class="service wraper">
-        <h2 class="service__title">РЕМОНТ ТЕХНИКИ РАЗЛИЧНЫХ БРЕНДОВ</h2>
-        <div class="service__slider ">
-            <ul class="service__items hide__brands">
-                <li class="service__item">
+        <h2 class="service__title">Ремонт техники различных брендов</h2>
+        <div class="service__slider swiper">
+            <ul class="service__items hide__brands swiper-wrapper">
+                <li class="service__item swiper-slide">
                     <img src="./img/png/lenovo.png" alt="lenovo" style="service__button--logo">
                     <button style="service__button">
                         <img src="./img/svg/go.svg" alt="go" style="service__button--icon">
                     </button>
                 </li>
-                <li class="service__item">
+                <li class="service__item swiper-slide">
                     <img src="./img/png/samsung.png" alt="samsung" style="service__button--logo">
                     <button style="service__button">
                         <img src="./img/svg/go.svg" alt="go" style="service__button--icon">
                     </button>
                 </li>
-                <li class="service__item">
+                <li class="service__item swiper-slide">
                     <img src="./img/png/apple.png" alt="apple" style="service__button--logo">
                     <button style="service__button">
                         <img src="./img/svg/go.svg" alt="go" style="service__button--icon">
                     </button>
                 </li>
-                <li class="service__item">
+                <li class="service__item swiper-slide">
                     <img src="./img/png/ViewSonic.png" alt="viewsonic" style="service__button--logo">
-                    <button style="service__button">
+                    <button style="service__button swiper-slide">
                         <img src="./img/svg/go.svg" alt="go" style="service__button--icon">
                     </button>
                 </li>
-                <li class="service__item">
+                <li class="service__item swiper-slide">
                     <img src="./img/png/bosch.png" alt="bosch" style="service__button--logo">
                     <button style="service__button">
                         <img src="./img/svg/go.svg" alt="go" style="service__button--icon">
                     </button>
                 </li>
-                <li class="service__item">
+                <li class="service__item swiper-slide">
                     <img src="./img/png/HP.png" alt="hp" style="service__button--logo">
                     <button style="service__button">
                         <img src="./img/svg/go.svg" alt="go" style="service__button--icon">
                     </button>
                 </li>
-                <li class="service__item">
+                <li class="service__item swiper-slide">
                     <img src="./img/png/acer.png" alt="acer" style="service__button--logo">
                     <button style="service__button">
                         <img src="./img/svg/go.svg" alt="go" style="service__button--icon">
                     </button>
                 </li>
-                <li class="service__item">
+                <li class="service__item swiper-slide">
                     <img src="./img/png/sony.png" alt="sony" style="service__button--logo">
                     <button style="service__button">
                         <img src="./img/svg/go.svg" alt="go" style="service__button--icon">
                     </button>
                 </li>
-                <li class="service__item">
+                <li class="service__item swiper-slide">
                     <img src="./img/png/lenovo.png" alt="lenovo" style="service__button--logo">
                     <button style="service__button">
                         <img src="./img/svg/go.svg" alt="go" style="service__button--icon">
                     </button>
                 </li>
-                <li class="service__item">
+                <li class="service__item swiper-slide">
                     <img src="./img/png/samsung.png" alt="samsung" style="service__button--logo">
                     <button style="service__button">
                         <img src="./img/svg/go.svg" alt="go" style="service__button--icon">
                     </button>
                 </li>
-                <li class="service__item">
+                <li class="service__item swiper-slide">
                     <img src="./img/png/apple.png" alt="apple" style="service__button--logo">
                     <button style="service__button">
                         <img src="./img/svg/go.svg" alt="go" style="service__button--icon">
                     </button>
-                </ul>
+            </ul>
         </div>
-        <div class="service__pagination"></div>
-        <button class="service__button ">
-            <span class="service__button--arrow show__arrow">»</span>
-            <span class="service__button--info">Показать всё</span>
+        <div class="swiper-pagination"></div> 
+        <button class="service__button--show">
+            Показать всё
         </button>
     </section>
-    <script src="./script/script.js"></script>
+    <script src="https://unpkg.com/swiper@11.2.5/swiper-bundle.min.js"></script>
+    <script src="./script/main.js"></script>
 </body>
 </html>
